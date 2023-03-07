@@ -56,7 +56,10 @@
                 if (gc.MaxContains >= 1.0)
                 {
                     Console.WriteLine("Bitte entleeren Sie den Abfallbehälter.");
-                    break;
+
+                    Thread.Sleep(3000);
+
+                    Service();
                 }
 
                 Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -181,7 +184,7 @@
         {
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             Console.WriteLine("~~~~~                                            ~~~~~");
-            Console.WriteLine("~~~~~        Wartungs Auswahl:                    ~~~~~");
+            Console.WriteLine("~~~~~        Wartungs Auswahl:                   ~~~~~");
             Console.WriteLine("~~~~~                                            ~~~~~");
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             Console.WriteLine("      1     Abfallbehälter entleeren.");
