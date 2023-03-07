@@ -1,3 +1,3 @@
 # Coffeemachine
 
-Simple Coffeemachine mechanic written in C#.
+Simple Coffeemachine console app written in C#.
