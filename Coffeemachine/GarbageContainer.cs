@@ -1,23 +1,17 @@
-﻿using System.Diagnostics.Metrics;
-
 namespace Coffeemachine
 {
     public class GarbageContainer : Container, IService
     {
-        public double MaxContains { get; set; }
-
-        public override string toString()
+        public override string ToString()
         {
-            return Convert.ToString(MaxContains);
+            return MaxContains.ToString();
         }
 
-        public void service()
+        public void Service()
         {
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            Console.WriteLine("~~~~~                                            ~~~~~");
-            Console.WriteLine("~~~~~     Ihr Abfallbehälter wird                ~~~~~");
-            Console.WriteLine("~~~~~     entleert...                            ~~~~~");
-            Console.WriteLine("~~~~~                                            ~~~~~");
+            Console.WriteLine("Ihr Abfallbehälter wird");
+            Console.WriteLine("entleert...");
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
             MaxContains = 0;
@@ -25,9 +19,7 @@ namespace Coffeemachine
             Thread.Sleep(3000);
 
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            Console.WriteLine("~~~~~                                            ~~~~~");
-            Console.WriteLine("~~~~~    Erfolgreich entleert.                   ~~~~~");
-            Console.WriteLine("~~~~~                                            ~~~~~");
+            Console.WriteLine("Erfolgreich entleert.");
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         }
     }

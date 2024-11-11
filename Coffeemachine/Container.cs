@@ -1,10 +1,10 @@
-﻿namespace Coffeemachine
+namespace Coffeemachine
 {
     public abstract class Container
     {
-        public double currFillLevel;
-        public double maxContains;
+        public double CurrentFillLevel { get; set; }
+        public double MaxContains { get; set; }
 
-        public abstract String toString();
+        public abstract override String ToString();
     }
 }
