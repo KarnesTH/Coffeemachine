@@ -1,5 +1,8 @@
 namespace Coffeemachine
 {
+    /// <summary>
+    /// Represents a coffee machine that can prepare various drinks.
+    /// </summary>
     public class Coffeemachine
     {
         private readonly IngredientsContainer _ingredientsContainer = new(1.0, 1.0, 1.0, 1.0, 1.0);
@@ -20,6 +23,9 @@ namespace Coffeemachine
 
         private readonly GarbageContainer _garbageContainer = new();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Coffeemachine"/> class.
+        /// </summary>
         public Coffeemachine()
         {
             _currentWater = _ingredientsContainer.Water;
@@ -29,12 +35,19 @@ namespace Coffeemachine
             _currentMilk = _ingredientsContainer.Milk;
         }
 
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        /// <param name="args">The command-line arguments.</param>
         private static void Main(string[] args)
         {
             var coffeemachine = new Coffeemachine();
             coffeemachine.Start();
         }
 
+        /// <summary>
+        /// Starts the coffee machine and displays the main menu.
+        /// </summary>
         public void Start()
         {
             DisplayMessage("Ihr Gerät startet...", 5000);
@@ -82,6 +95,10 @@ namespace Coffeemachine
             }
         }
 
+        /// <summary>
+        /// Creates a drink based on the specified recipe.
+        /// </summary>
+        /// <param name="recipe">The recipe for the drink.</param>
         private void CreateDrink(Reciepes recipe)
         {
             if (_currentWater < recipe.Water)
@@ -113,6 +130,12 @@ namespace Coffeemachine
             }
         }
 
+        /// <summary>
+        /// Deducts the specified amount of an ingredient from the current amount.
+        /// </summary>
+        /// <param name="currentAmount">The current amount of the ingredient.</param>
+        /// <param name="amountToDeduct">The amount to deduct.</param>
+        /// <param name="container">The ingredients container.</param>
         private void DeductIngredient(ref double currentAmount, double amountToDeduct, IngredientsContainer container)
         {
             if (amountToDeduct > 0)
@@ -142,6 +165,9 @@ namespace Coffeemachine
             }
         }
 
+        /// <summary>
+        /// Displays the current status of the coffee machine.
+        /// </summary>
         private void Status()
         {
             Console.Clear();
@@ -157,12 +183,18 @@ namespace Coffeemachine
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         }
 
+        /// <summary>
+        /// Shuts down the coffee machine.
+        /// </summary>
         private void Shutdown()
         {
             DisplayMessage("Abschaltung...", 3000);
             Environment.Exit(0);
         }
 
+        /// <summary>
+        /// Performs maintenance on the coffee machine.
+        /// </summary>
         private void Service()
         {
             Console.Clear();
@@ -192,6 +224,11 @@ namespace Coffeemachine
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         }
 
+        /// <summary>
+        /// Displays a message with an optional delay.
+        /// </summary>
+        /// <param name="message">The message to display.</param>
+        /// <param name="delay">The delay in milliseconds before clearing the message.</param>
         private void DisplayMessage(string message, int delay = 0)
         {
             Console.Clear();
@@ -205,6 +242,9 @@ namespace Coffeemachine
             }
         }
 
+        /// <summary>
+        /// Displays the main menu of the coffee machine.
+        /// </summary>
         private void DisplayMenu()
         {
             Console.Clear();
